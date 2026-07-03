@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name = "Test Suite">
+
+    <listeners>
+        <listener class-name="ExtentReport.MyListener"/>
+    </listeners>
+
+    <test name = "Gmail Test">
+
+        <parameter name="deviceName" value="Pixel 10 Pro Fold"/>
+        <parameter name="platformName" value="Android"/>
+        <parameter name="platformVersion" value="17"/>
+        <parameter name="udid" value="4C271FDCG000LZ"/>
+        <parameter name="appPackage" value="com.google.android.gm"/>
+        <parameter name="appActivity" value="com.google.android.gm.ConversationListActivityGmail"/>
+        <parameter name="appName" value="Gmail"/>
+
+        <classes>
+            <class name="Tests.GmailTest">
+                <methods>
+                    <include name="sendMailTest"/>
+                    <include name="sendMeetLinkTest"/>
+                    <include name="checkTheme"/>
+                    <include name="checkManageNotifications"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
